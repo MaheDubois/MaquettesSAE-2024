@@ -1,0 +1,98 @@
+﻿<Window x:Class="Maquette1.PageRecapCommande"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Maquette1"
+        mc:Ignorable="d"
+        Title="PageRecapCommande" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="#FF168A3D">
+            <StackPanel Grid.ColumnSpan="3">
+
+                <Label
+                    Width="798"
+                    Background="#FF168A3D"
+                    Content="Nom magasin"
+                    FontWeight="Bold" />
+                <TextBox HorizontalAlignment="Left" Margin="4,0,0,0" TextWrapping="Wrap" Text="Saisir" VerticalAlignment="Top" Width="100"/>
+                <Label Content="Total commande :" Margin="0,240,0,0" FontWeight="Bold" Background="White"></Label>
+                <Label Content="         XX,xx eur" Background="White" FontWeight="Bold"></Label>
+
+            </StackPanel>
+            <Image Margin="-11,46,-11,269" Source="/img/Logo_Botanic.png" Stretch="Fill"/>
+        </Grid>
+
+        
+        <Grid Grid.Column="1" Background="#FFCEF9CE">
+            <StackPanel>
+                <TextBox
+                    Width="430"
+                    Margin="0,5,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Text="Rechercher" />
+                <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+                    <Label Content="Commande n°X :" FontSize="15" FontWeight="Bold"></Label>
+                    <Label Content="Date création commande : XX/XX/XXXX" Margin="80,3,0,0"></Label>
+                </StackPanel>
+                <Label Content="Détails commande :" Margin="0,15,0,0" FontWeight="Bold"></Label>
+                <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                    <Label Content="Transport : "></Label>
+                    <DatePicker Margin="5,0,0,0" Background="White"></DatePicker>
+                    <Label Content="Fournisseur : (Local/Centrale)" Margin="60,0,0,0"></Label>
+                    
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                    <Label Content="Date livraison : "></Label>
+                    <DatePicker Background="White"></DatePicker>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                    <Label Content="Date Réception :  (si reçue)" Margin="0,0,0,0"></Label>
+                    <DatePicker Background="White"></DatePicker>
+                </StackPanel>
+                <Label Content="Liste produits :" Margin="0,15,0,0"></Label>
+                <ListBox Height="80" Margin="14,5,15,0" Width="450" BorderThickness="3,3,3,3">
+                    <ListBoxItem Content="Produit 1                            Quantité : XX (1-100)                              XX,xx eur" />
+                    <ListBoxItem Content="Produit 2                            Quantité : XX (1-100)                              XX,xx eur" />
+                    <ListBoxItem Content="Produit 3                            Quantité : XX (1-100)                              XX,xx eur" />
+                    <ListBoxItem Content="Produit 4                            Quantité : XX (1-100)                              XX,xx eur" />
+                    <ListBoxItem Content="Produit 5                            Quantité : XX (1-100)                              XX,xx eur" />
+                    <ListBoxItem Content="Produit 6                            Quantité : XX (1-100)                              XX,xx eur" />
+                    <ListBoxItem Content="Produit 7                            Quantité : XX (1-100)                              XX,xx eur" />
+                    <ListBoxItem Content="Produit 8                            Quantité : XX (1-100)                              XX,xx eur" />
+                    <ListBoxItem Content="Produit N                            Quantité : XX (1-100)                              XX,xx eur" />
+                </ListBox>
+                
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="2" Background="White">
+            <StackPanel Width="184" HorizontalAlignment="Center">
+                <Button Margin="15,5,15,0" Content="Connexion" />
+                <Label Content="Commandes récentes :" FontWeight="Bold" Margin="20,90,0,0"></Label>
+                
+                <ListBox Height="150" Margin="14,5,15,0" Width="140" BorderThickness="3,3,3,3">
+                    <ListBoxItem Content="Commande 1" />
+                    <ListBoxItem Content="Commande 2" />
+                    <ListBoxItem Content="Commande 3" />
+                    <ListBoxItem Content="Commande 4" />
+                    <ListBoxItem Content="Commande 5" />
+                    <ListBoxItem Content="Commande 6" />
+                    <ListBoxItem Content="Commande 7" />
+                    <ListBoxItem Content="Commande 8" />
+                    <ListBoxItem Content="Commande N" />
+                </ListBox>
+                <Button Content="Valider" Margin="15,40,15,0" BorderThickness="3,3,3,3" Background="#FF5AC35A"></Button>
+                
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+    
+</Window>
