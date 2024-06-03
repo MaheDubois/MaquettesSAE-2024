@@ -77,7 +77,7 @@
             <StackPanel Width="184" HorizontalAlignment="Center">
                 <Button x:Name="bt_Profil" Margin="85,5,15,0" Content="" Width="50" Height="50"/>
                 <Label x:Name="lb_CommandesRecentes" Content="Commandes récentes :" FontWeight="Bold" Margin="20,70,0,0"></Label>
-                
+
                 <ListBox x:Name="lib_CommandesRecentes" Height="150" Margin="14,5,15,0" Width="140" BorderThickness="3,3,3,3">
                     <ListBoxItem Content="Commande 1" />
                     <ListBoxItem Content="Commande 2" />
@@ -90,10 +90,10 @@
                     <ListBoxItem Content="Commande N" />
                 </ListBox>
                 <Button x:Name="bt_Valider" Content="Valider" Margin="15,40,15,0" BorderThickness="3,3,3,3" Background="#FF5AC35A"></Button>
-                
+
             </StackPanel>
         </Grid>
-
+        
     </Grid>
     
 </Window>
