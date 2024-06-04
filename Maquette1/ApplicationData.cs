@@ -15,6 +15,20 @@ namespace Maquette1
         //private ObservableCollection<Client> lesClients;
         private NpgsqlConnection connexion = null;   // futur lien à la BD
 
+        private ObservableCollection<Salarie> lesSalaries;
+
+        public ObservableCollection<Salarie> LesSalaries
+        {
+            get
+            {
+                return this.lesSalaries;
+            }
+
+            set
+            {
+                this.lesSalaries = value;
+            }
+        }
 
         //public ObservableCollection<Client> LesClients
         //{
@@ -155,5 +169,25 @@ namespace Maquette1
                 catch (Exception e)
                 { Console.WriteLine("pb à la déconnexion : " + e); }
             }
+
+        public int Read()
+        {
+            String sql = "SELECT * from salarie";
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                foreach (DataRow res in dataTable.Rows)
+                {
+                    Salarie nouveau = new Salarie(int.Parse(res["num_salarie"].ToString()),
+                    res["login_salarie"].ToString(), res["mdp_salarie"].ToString());
+                    LesSalaries.Add(nouveau);
+                }
+                return dataTable.Rows.Count;
+            }
+            catch (NpgsqlException e)
+            { Console.WriteLine("pb de requete : " + e); return 0; }
+        }
     }
 }
