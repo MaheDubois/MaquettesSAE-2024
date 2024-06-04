@@ -151,15 +151,7 @@
                     Background="#FF5AC35A"
                     BorderThickness="3,3,3,3"
                     Content="Valider" />
-                <DataGrid>
-                    <DataGrid.Columns>
-                        <DataGrid
-                            Name="dgSalaries"
-                            AutoGenerateColumns="True"
-                            ItemsSource="{Binding lesSalaries}">
-                        </DataGrid>
-                    </DataGrid.Columns>
-                </DataGrid>
+               
             </StackPanel>
         </Grid>
         <Grid Grid.Column="2" Background="White">
