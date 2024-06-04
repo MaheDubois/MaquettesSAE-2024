@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Maquette1
 {
-    public class DataAccess : ApplicationData
+    public class DataAccess
     {
         private static DataAccess instance;
         private static string strConnexion = "Host = srv - peda - new; Port=5433;Database=BotanicTP11;Username=duboimah;Password=***********;Persist Security Info=True";

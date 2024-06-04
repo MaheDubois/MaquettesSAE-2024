@@ -47,18 +47,7 @@ namespace Maquette1
 
 
 
-        public NpgsqlConnection Connexion
-        {
-            get
-            {
-                return this.connexion;
-            }
-
-            set
-            {
-                this.connexion = value;
-            }
-        }
+    
 
         public ApplicationData()
         {
@@ -104,7 +93,6 @@ namespace Maquette1
             String sql = "SELECT * from salarie";
             try
             {
-                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 foreach (DataRow res in dataTable.Rows)

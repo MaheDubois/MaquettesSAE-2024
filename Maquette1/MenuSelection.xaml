@@ -11,6 +11,8 @@
     <Grid Background="White">
         <StackPanel>
             <Label Content="MENU" FontSize="22" FontFamily="Arial Black" Background="LightGreen"/>
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="True" Margin="30,20,30,0"/>
+            
         </StackPanel>
     </Grid>
 </Page>

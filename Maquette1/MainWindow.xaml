@@ -160,8 +160,6 @@
                         </DataGrid>
                     </DataGrid.Columns>
                 </DataGrid>
-
-
             </StackPanel>
         </Grid>
         <Grid Grid.Column="2" Background="White">
