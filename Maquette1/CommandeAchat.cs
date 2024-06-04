@@ -43,7 +43,7 @@ namespace Maquette1
         public static ObservableCollection<CommandeAchat> Read()
         {
             ObservableCollection<CommandeAchat> lesCommandesAchats = new ObservableCollection<CommandeAchat>();
-            String sql = "SELECT * from botanic.CommandeAchat";
+            String sql = "SELECT * from botanic.commande_achat";
             DataTable dt = DataAccess.Instance.GetData(sql);
             foreach (DataRow res in dt.Rows)
             {

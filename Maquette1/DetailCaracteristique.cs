@@ -42,7 +42,7 @@ namespace Maquette1
         public static ObservableCollection<DetailCaracteristique> Read()
         {
             ObservableCollection<DetailCaracteristique> lesDetailsCaracteristiques = new ObservableCollection<DetailCaracteristique>();
-            String sql = "SELECT * from botanic.DetailCaracteristique";
+            String sql = "SELECT * from botanic.detail_caracteristque";
             DataTable dt = DataAccess.Instance.GetData(sql);
             foreach (DataRow res in dt.Rows)
             {
