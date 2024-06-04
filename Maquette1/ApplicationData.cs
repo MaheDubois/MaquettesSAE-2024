@@ -66,38 +66,38 @@ namespace Maquette1
             
            
         }
-       
 
 
-            //public void Read()
-            //{
-            //    this.LesClients = new ObservableCollection<Client>();
-            //}
 
-            //public int Read()
-            //{
-            //    this.LesClients = new ObservableCollection<Client>();
-            //    String sql = "SELECT id, nom,prenom,email,genre,telephone, dateNaissance FROM Client";
-            //    try
-            //    {
-            //        SqlDataAdapter dataAdapter = new SqlDataAdapter(sql, Connexion);
-            //        DataTable dataTable = new DataTable();
-            //        dataAdapter.Fill(dataTable);
-            //        foreach (DataRow res in dataTable.Rows)
-            //        {
-            //            Client nouveau = new Client(int.Parse(res["id"].ToString()),
-            //            res["nom"].ToString(), res["prenom"].ToString(),
-            //            res["email"].ToString(), DateTime.Parse(res["dateNaissance"].ToString()),
-            //            res["telephone"].ToString(),
-            //            (GenreClient)char.Parse(res["genre"].ToString()));
-            //            LesClients.Add(nouveau);
-            //        }
-            //        return dataTable.Rows.Count;
-            //    }
-            //    catch (SqlException e)
-            //    { Console.WriteLine("pb de requete : " + e); return 0; }
-            //}
-          
+        //public void Read()
+        //{
+        //    this.LesClients = new ObservableCollection<Client>();
+        //}
+
+        //public int Read()
+        //{
+        //    this.LesClients = new ObservableCollection<Client>();
+        //    String sql = "SELECT id, nom,prenom,email,genre,telephone, dateNaissance FROM Client";
+        //    try
+        //    {
+        //        SqlDataAdapter dataAdapter = new SqlDataAdapter(sql, Connexion);
+        //        DataTable dataTable = new DataTable();
+        //        dataAdapter.Fill(dataTable);
+        //        foreach (DataRow res in dataTable.Rows)
+        //        {
+        //            Client nouveau = new Client(int.Parse(res["id"].ToString()),
+        //            res["nom"].ToString(), res["prenom"].ToString(),
+        //            res["email"].ToString(), DateTime.Parse(res["dateNaissance"].ToString()),
+        //            res["telephone"].ToString(),
+        //            (GenreClient)char.Parse(res["genre"].ToString()));
+        //            LesClients.Add(nouveau);
+        //        }
+        //        return dataTable.Rows.Count;
+        //    }
+        //    catch (SqlException e)
+        //    { Console.WriteLine("pb de requete : " + e); return 0; }
+        //}
+
 
         public int Read()
         {
