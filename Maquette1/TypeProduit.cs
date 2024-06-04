@@ -25,7 +25,7 @@ namespace Maquette1
         public static ObservableCollection<TypeProduit> Read()
         {
             ObservableCollection<TypeProduit> lesTypeProduit = new ObservableCollection<TypeProduit>();
-            String sql = "SELECT num_type,designation_type FROM TypeProduit";
+            String sql = "SELECT num_type,designation_type FROM botanic.TypeProduit";
             DataTable dt = DataAccess.Instance.GetData(sql);
             foreach (DataRow res in dt.Rows)
             {
