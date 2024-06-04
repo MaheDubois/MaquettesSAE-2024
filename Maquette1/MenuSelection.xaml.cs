@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,29 @@ namespace Maquette1
         public MenuSelection()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            try
+            {
+                DataAccess dataAccess = DataAccess.Instance;
+                DataTable dataTable = dataAccess.GetData("SELECT * FROM botanic.fournisseur");
+
+                if (dataTable != null)
+                {
+                    dataGrid.ItemsSource = dataTable.DefaultView;
+                }
+                else
+                {
+                    MessageBox.Show("No data returned from the query.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message);
+            }
         }
     }
 }

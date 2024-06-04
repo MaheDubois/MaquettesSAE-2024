@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace Maquette1
         public MainWindow()
         {
             InitializeComponent();
+            LoadData();
             //PageConnexion fenetreConnexion = new PageConnexion();
             //fenetreConnexion.ShowDialog();
             //if (fenetreConnexion.DialogResult == false)
@@ -36,6 +38,32 @@ namespace Maquette1
             //{
             //    System.Windows.Application.Current.Shutdown();
             //}
+        }
+
+        private void LoadData()
+        {
+            try
+            {
+                DataAccess dataAccess = DataAccess.Instance;
+                Console.WriteLine("Attempting to retrieve data...");
+                DataTable dataTable = dataAccess.GetData("SELECT * FROM YourTableName");
+
+                if (dataTable != null && dataTable.Rows.Count > 0)
+                {
+                    Console.WriteLine("Data retrieved successfully.");
+                    dataGrid.ItemsSource = dataTable.DefaultView;
+                }
+                else
+                {
+                    MessageBox.Show("No data returned from the query.");
+                    Console.WriteLine("DataTable is null or has no rows.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message);
+                Console.WriteLine("Error loading data: " + ex.Message);
+            }
         }
     }
 }
