@@ -27,7 +27,10 @@
 
 
             </StackPanel>
-            <Image Margin="-11,46,-11,269" Source="/img/Logo_Botanic.png" Stretch="Fill"/>
+            <Image
+                Margin="-11,46,-11,269"
+                Source="/img/Logo_Botanic.png"
+                Stretch="Fill" />
         </Grid>
         <Grid Grid.Column="1">
             <StackPanel>
@@ -83,7 +86,10 @@
                     FontWeight="Bold" />
                 <StackPanel Margin="19,8,0,0" Orientation="Horizontal">
                     <Label x:Name="lb_FiltreType" Content="Types" />
-                    <Label x:Name="lb_FiltreCategories" Margin="170,0,0,0" Content="Categories" />
+                    <Label
+                        x:Name="lb_FiltreCategories"
+                        Margin="170,0,0,0"
+                        Content="Categories" />
                 </StackPanel>
                 <StackPanel Margin="22,8,0,0" Orientation="Horizontal">
                     <ComboBox x:Name="cb_FiltreType" Width="90">
@@ -92,7 +98,10 @@
                         <ComboBoxItem>Potager</ComboBoxItem>
                         <ComboBoxItem>...</ComboBoxItem>
                     </ComboBox>
-                    <ComboBox x:Name="cb_FiltreCategorie" Width="140" Margin="118,0,0,0">
+                    <ComboBox
+                        x:Name="cb_FiltreCategorie"
+                        Width="140"
+                        Margin="118,0,0,0">
                         <ComboBoxItem>Plantes</ComboBoxItem>
                         <ComboBoxItem>Entretien jardin</ComboBoxItem>
                         <ComboBoxItem>Matériel arrosage</ComboBoxItem>
@@ -111,11 +120,20 @@
                         Margin="20,33,0,0"
                         Content="Type commande :"
                         FontWeight="Bold" />
-                    <RadioButton x:Name="rb_TypeCommandeCentrale" Margin="5,40,0,0" Content="Centrale" />
-                    <RadioButton x:Name="rb_TypeCommandeLocale" Margin="10,40,0,0" Content="Locale" />
+                    <RadioButton
+                        x:Name="rb_TypeCommandeCentrale"
+                        Margin="5,40,0,0"
+                        Content="Centrale" />
+                    <RadioButton
+                        x:Name="rb_TypeCommandeLocale"
+                        Margin="10,40,0,0"
+                        Content="Locale" />
                 </StackPanel>
 
-                <ListBox x:Name="lib_ListeProduit" Height="100" Margin="10,10,10,0">
+                <ListBox
+                    x:Name="lib_ListeProduit"
+                    Height="100"
+                    Margin="10,10,10,0">
                     <ListBoxItem Content="Produit 1                                                                              XX,xx eur                                      - | +" />
                     <ListBoxItem Content="Produit 2                                                                              XX,xx eur                                      - | +" />
                     <ListBoxItem Content="Produit 3                                                                              XX,xx eur                                      - | +" />
@@ -127,9 +145,21 @@
                     <ListBoxItem Content="Produit n                                                                              XX,xx eur                                      - | +" />
                 </ListBox>
 
-                <Button x:Name="bt_Valider" Content="Valider" Margin="150,20,150,0" BorderThickness="3,3,3,3" Background="#FF5AC35A"></Button>
-
-
+                <Button
+                    x:Name="bt_Valider"
+                    Margin="150,20,150,0"
+                    Background="#FF5AC35A"
+                    BorderThickness="3,3,3,3"
+                    Content="Valider" />
+                <DataGrid>
+                    <DataGrid.Columns>
+                        <DataGrid
+                            Name="dgSalaries"
+                            AutoGenerateColumns="True"
+                            ItemsSource="{Binding lesSalaries}">
+                        </DataGrid>
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>
         </Grid>
         <Grid Grid.Column="2" Background="White">
@@ -140,7 +170,10 @@
                     Margin="0,227,0,0"
                     Content="Filtre couleur :"
                     FontWeight="Bold" />
-                <ComboBox x:Name="cb_FiltreCouleur" Width="90" Margin="5,0,0,0">
+                <ComboBox
+                    x:Name="cb_FiltreCouleur"
+                    Width="90"
+                    Margin="5,0,0,0">
                     <ComboBoxItem>Rouge</ComboBoxItem>
                     <ComboBoxItem>Vert</ComboBoxItem>
                     <ComboBoxItem>Jaune</ComboBoxItem>
