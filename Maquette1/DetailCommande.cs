@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,19 @@ namespace Maquette1
             Num_produit = num_produit;
             Num_fournisseur = num_fournisseur;
             Quantite_commandee = quantite_commandee;
+        }
+
+        public static ObservableCollection<DetailCommande> Read()
+        {
+            ObservableCollection<DetailCommande> lesDetailsCommandes = new ObservableCollection<DetailCommande>();
+            String sql = "SELECT num_commande, num_produit, num_fournisseur, quantite_commande FROM botanic.detail_commande";
+            DataTable dt = DataAccess.Instance.GetData(sql);
+            foreach (DataRow res in dt.Rows)
+            {
+                DetailCommande nouveau = new DetailCommande(int.Parse(res["num_commande"].ToString()), int.Parse(res["num_produit"].ToString()), int.Parse(res["num_fournisseur"].ToString()), int.Parse(res["quantite_commande"].ToString()));
+                lesDetailsCommandes.Add(nouveau);
+            }
+            return lesDetailsCommandes;
         }
 
         public override bool Equals(object? obj)
