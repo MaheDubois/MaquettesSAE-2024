@@ -9,6 +9,10 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
+    <Window.DataContext>
+        <local:ApplicationData x:Name="data"/>
+    </Window.DataContext>
+
     <Grid Background="#FFDDFFDD">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10*" />
@@ -151,13 +155,12 @@
                     Background="#FF5AC35A"
                     BorderThickness="3,3,3,3"
                     Content="Valider" />
-                <DataGrid>
-                    <DataGrid.Columns>
-                        <DataGrid
-                            Name="dgSalaries"
-                            AutoGenerateColumns="True"
-                            ItemsSource="{Binding lesSalaries}">
-                        </DataGrid>
+                <DataGrid Name="dgCouleurs" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding LesCouleurs}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0" MinHeight="150" >
+                    <DataGrid.Columns >
+
+                        <DataGridTextColumn Header="Nom" Binding="{Binding Nom_couleur}" Width="80" />
+                        <DataGridTextColumn Header="id" Binding="{Binding Id_couleur}" Width="80" />
+                        
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

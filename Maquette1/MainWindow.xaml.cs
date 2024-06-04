@@ -24,6 +24,7 @@ namespace Maquette1
         public MainWindow()
         {
             InitializeComponent();
+            Couleur.Read();
             //LoadData();
             //PageConnexion fenetreConnexion = new PageConnexion();
             //fenetreConnexion.ShowDialog();
