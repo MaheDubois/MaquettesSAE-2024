@@ -88,23 +88,6 @@ namespace Maquette1
         //}
 
 
-        public int Read()
-        {
-            String sql = "SELECT * from salarie";
-            try
-            {
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                foreach (DataRow res in dataTable.Rows)
-                {
-                    Salarie nouveau = new Salarie(int.Parse(res["num_salarie"].ToString()),
-                    res["login_salarie"].ToString(), res["mdp_salarie"].ToString());
-                    LesSalaries.Add(nouveau);
-                }
-                return dataTable.Rows.Count;
-            }
-            catch (NpgsqlException e)
-            { Console.WriteLine("pb de requete : " + e); return 0; }
-        }
+       
     }
 }
