@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace Maquette1
     /// </summary>
     public partial class PageRecapCommande : Window
     {
-        public string NomMagasin;
+        
         private bool seConnecter = false;
         public PageRecapCommande()
         {
@@ -31,7 +32,7 @@ namespace Maquette1
         {
             InitializeComponent();
             seConnecter = true;
-        }
 
+        }
     }
 }
