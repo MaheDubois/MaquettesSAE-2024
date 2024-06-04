@@ -61,11 +61,6 @@ namespace Maquette1
             }
             return lesProduits;
         }
-                }
-                return dataTable.Rows.Count;
-            }
-            catch (NpgsqlException e)
-            { Console.WriteLine("pb de requete : " + e); return 0; }
-        }
     }
+    
 }
