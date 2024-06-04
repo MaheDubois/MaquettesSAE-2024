@@ -19,6 +19,7 @@
             <StackPanel Grid.ColumnSpan="3">
 
                 <Label
+                    x:Name="lb_NomMagasin"
                     Width="798"
                     Background="#FF168A3D"
                     Content="Nom magasin"
@@ -26,11 +27,15 @@
 
 
             </StackPanel>
-            <Image Margin="-11,46,-11,269" Source="/img/Logo_Botanic.png" Stretch="Fill"/>
+            <Image
+                Margin="-11,46,-11,269"
+                Source="/img/Logo_Botanic.png"
+                Stretch="Fill" />
         </Grid>
         <Grid Grid.Column="1">
             <StackPanel>
                 <TextBox
+                    x:Name="tb_Rechercher"
                     Width="500"
                     Margin="0,5,0,0"
                     HorizontalAlignment="Center"
@@ -38,51 +43,65 @@
                     Text="Rechercher" />
                 <StackPanel Margin="0,8,0,0" Orientation="Horizontal">
                     <Button
+                        x:Name="bt_motclef1"
                         Width="60"
                         Margin="10,0,10,0"
                         Content="Mot clef 1" />
                     <Button
+                        x:Name="bt_motclef2"
                         Width="60"
                         Margin="10,0,10,0"
                         Content="Mot clef 2" />
                     <Button
+                        x:Name="bt_motclef3"
                         Width="60"
                         Margin="10,0,10,0"
                         Content="Mot clef 3" />
                     <Button
+                        x:Name="bt_motclef4"
                         Width="60"
                         Margin="10,0,10,0"
                         Content="Mot clef 4" />
                     <Button
+                        x:Name="bt_motclef5"
                         Width="60"
                         Margin="10,0,10,0"
                         Content="Mot clef 5" />
                     <Button
+                        x:Name="bt_motclef6"
                         Width="60"
                         Margin="10,0,10,0"
                         Content="Mot clef 6" />
                     <Button
+                        x:Name="bt_motclef7"
                         Width="60"
                         Margin="10,0,10,0"
                         Content="Mot clef N" />
                 </StackPanel>
                 <Label
+                    x:Name="lb_Filtres"
                     Margin="3,30,0,0"
                     Content="Filtres :"
                     FontSize="20"
                     FontWeight="Bold" />
                 <StackPanel Margin="19,8,0,0" Orientation="Horizontal">
-                    <Label Content="Types" />
-                    <Label Margin="170,0,0,0" Content="Categories" />
+                    <Label x:Name="lb_FiltreType" Content="Types" />
+                    <Label
+                        x:Name="lb_FiltreCategories"
+                        Margin="170,0,0,0"
+                        Content="Categories" />
                 </StackPanel>
                 <StackPanel Margin="22,8,0,0" Orientation="Horizontal">
-                    <ComboBox Width="90">
+                    <ComboBox x:Name="cb_FiltreType" Width="90">
                         <ComboBoxItem>Jardin</ComboBoxItem>
                         <ComboBoxItem>Mobilier</ComboBoxItem>
                         <ComboBoxItem>Potager</ComboBoxItem>
                         <ComboBoxItem>...</ComboBoxItem>
                     </ComboBox>
-                    <ComboBox Width="140" Margin="118,0,0,0">
+                    <ComboBox
+                        x:Name="cb_FiltreCategorie"
+                        Width="140"
+                        Margin="118,0,0,0">
                         <ComboBoxItem>Plantes</ComboBoxItem>
                         <ComboBoxItem>Entretien jardin</ComboBoxItem>
                         <ComboBoxItem>Matériel arrosage</ComboBoxItem>
@@ -91,19 +110,30 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label
+                        x:Name="lb_PropositionsProduits"
                         Margin="0,30,0,0"
                         Content="Propositions produits selon critères"
                         FontSize="15"
                         FontWeight="Bold" />
                     <Label
+                        x:Name="lb_TypeCommande"
                         Margin="20,33,0,0"
                         Content="Type commande :"
                         FontWeight="Bold" />
-                    <RadioButton Margin="5,40,0,0" Content="Centrale" Background="red" />
-                    <RadioButton Margin="10,40,0,0" Content="Locale" />
+                    <RadioButton
+                        x:Name="rb_TypeCommandeCentrale"
+                        Margin="5,40,0,0"
+                        Content="Centrale" />
+                    <RadioButton
+                        x:Name="rb_TypeCommandeLocale"
+                        Margin="10,40,0,0"
+                        Content="Locale" />
                 </StackPanel>
 
-                <ListBox Height="100" Margin="10,10,10,0">
+                <ListBox
+                    x:Name="lib_ListeProduit"
+                    Height="100"
+                    Margin="10,10,10,0">
                     <ListBoxItem Content="Produit 1                                                                              XX,xx eur                                      - | +" />
                     <ListBoxItem Content="Produit 2                                                                              XX,xx eur                                      - | +" />
                     <ListBoxItem Content="Produit 3                                                                              XX,xx eur                                      - | +" />
@@ -123,10 +153,14 @@
             <StackPanel Width="100" HorizontalAlignment="Center">
                 <Button Margin="10,5,2,0" Content="Connecté" />
                 <Label
+                    x:Name="lb_FiltreCouleur"
                     Margin="0,227,0,0"
                     Content="Filtre couleur :"
                     FontWeight="Bold" />
-                <ComboBox Width="90" Margin="5,0,0,0">
+                <ComboBox
+                    x:Name="cb_FiltreCouleur"
+                    Width="90"
+                    Margin="5,0,0,0">
                     <ComboBoxItem>Rouge</ComboBoxItem>
                     <ComboBoxItem>Vert</ComboBoxItem>
                     <ComboBoxItem>Jaune</ComboBoxItem>
