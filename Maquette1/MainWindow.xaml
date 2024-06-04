@@ -154,9 +154,10 @@
                 <DataGrid>
                     <DataGrid.Columns>
                         <DataGrid
-                            Name="dgClients"
+                            Name="dgSalaries"
                             AutoGenerateColumns="True"
-                            ItemsSource="{Binding LesSalaries}" />
+                            ItemsSource="{Binding lesSalaries}">
+                        </DataGrid>
                     </DataGrid.Columns>
                 </DataGrid>
 

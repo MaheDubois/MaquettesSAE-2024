@@ -30,18 +30,22 @@ namespace Maquette1
             }
         }
 
-        //public ObservableCollection<Client> LesClients
-        //{
-        //    get
-        //    {
-        //        return this.lesClients;
-        //    }
+        private ObservableCollection<Produit> lesProduits;
 
-        //    set
-        //    {
-        //        this.lesClients = value;
-        //    }
-        //}
+        public ObservableCollection<Produit> LesProduits
+        {
+            get
+            {
+                return this.lesProduits;
+            }
+
+            set
+            {
+                this.lesProduits = value;
+            }
+        }
+
+
 
         public NpgsqlConnection Connexion
         {
@@ -59,25 +63,10 @@ namespace Maquette1
         public ApplicationData()
         {
 
-            this.ConnexionBD();
-            //this.Read();
+            
+           
         }
-        public void ConnexionBD()
-        {
-            try
-            {
-                Connexion = new NpgsqlConnection();
-                Connexion.ConnectionString = @"new;Database=BotanicTP11;Password=***********;Username=maniglil;Port=5433";
-                // à compléter dans les ""
-                // @ sert à enlever tout pb avec les caractères
-                Connexion.Open();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("pb de connexion : " + e);
-                // juste pour le debug : à transformer en MsgBox
-            }
-        }
+       
 
 
             //public void Read()
@@ -108,67 +97,7 @@ namespace Maquette1
             //    catch (SqlException e)
             //    { Console.WriteLine("pb de requete : " + e); return 0; }
             //}
-            //public int Create(Client c)
-            //{
-            //    int nb;
-            //    String sql = $"insert into client (nom,prenom,email,genre,telephone, dateNaissance)"
-            //    + $" values ('{c.Nom}','{c.Prenom}','{c.Email}'"
-            //    + $",'{(char)c.Genre}','{c.Telephone}', "
-            //    + $"'{c.DateNaissance.Year}-{c.DateNaissance.Month}-{c.DateNaissance.Day}'); ";
-            //    try
-            //    {
-            //        SqlCommand cmd = new SqlCommand(sql, Connexion);
-            //        nb = cmd.ExecuteNonQuery();
-            //        return nb;
-            //        //nb permet de connaître le nb de lignes affectées par un insert, update, delete
-            //    }
-            //    catch (Exception sqlE)
-            //    {
-            //        Console.WriteLine("pb de requete : " + sql + "" + sqlE);
-            //        // juste pour le debug : à transformer en MsgBox
-            //        return 0;
-            //    }
-            //}
-            public DataTable GetData(string selectSQL)
-            {
-                try
-                {
-                    NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(selectSQL, Connexion);
-                    DataTable dataTable = new DataTable();
-                    dataAdapter.Fill(dataTable);
-                    return dataTable;
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("pb avec : " + selectSQL + e.ToString());
-                    return null;
-                }
-            }
-            public int SetData(string setSQL)
-            {
-
-                try
-                {
-                    NpgsqlCommand sqlCommand = new NpgsqlCommand(setSQL, Connexion);
-                    int nbLines = sqlCommand.ExecuteNonQuery();
-                    return nbLines;
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("pb avec : " + setSQL + e.ToString());
-                    return 0;
-                }
-            }
-
-            public void DeconnexionBD()
-            {
-                try
-                {
-                    Connexion.Close();
-                }
-                catch (Exception e)
-                { Console.WriteLine("pb à la déconnexion : " + e); }
-            }
+          
 
         public int Read()
         {
