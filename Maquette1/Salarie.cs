@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -38,7 +39,19 @@ namespace Maquette1
             return base.ToString();
         }
 
-        
+        public static ObservableCollection<Salarie> Read()
+        {
+            ObservableCollection<Salarie> lesSalaries = new ObservableCollection<Salarie>();
+            String sql = "SELECT num_salarie, login_salarie, mdp_salarie FROM botanic.salarie";
+            DataTable dt = DataAccess.Instance.GetData(sql);
+            foreach (DataRow res in dt.Rows)
+            {
+                Salarie nouveau = new Salarie(int.Parse(res["num_salarie"].ToString()), res["login_salarie"].ToString(),
+                res["mdp_salarie"].ToString());
+                lesSalaries.Add(nouveau);
+            }
+            return lesSalaries;
+        }
     }
 
   

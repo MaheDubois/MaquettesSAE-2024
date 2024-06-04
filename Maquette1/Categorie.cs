@@ -28,7 +28,7 @@ namespace Maquette1
         public static ObservableCollection<Categorie> Read()
         {
             ObservableCollection<Categorie> lesCaracteristiques = new ObservableCollection<Categorie>();
-            String sql = "SELECT * from botanic.Categorie";
+            String sql = "SELECT * from botanic.categorie";
             DataTable dt = DataAccess.Instance.GetData(sql);
             foreach (DataRow res in dt.Rows)
             {

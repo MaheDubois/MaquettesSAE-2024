@@ -25,7 +25,7 @@ namespace Maquette1
         {
             InitializeComponent();
          PageConnexion pageConnexion = new PageConnexion();
-            NomMagasin = pageConnexion.tb_NomMagasin.Text;
+            //NomMagasin = pageConnexion.tb_NomMagasin.Text;
         }
         private void ButtonSeConnecter_Click(object sender, RoutedEventArgs e)
         {

@@ -40,11 +40,11 @@ namespace Maquette1
         public static ObservableCollection<Couleur> Read()
         {
             ObservableCollection<Couleur> lesCouleurs = new ObservableCollection<Couleur>();
-            String sql = "SELECT * from botanic.Couleur";
+            String sql = "SELECT * from botanic.couleur";
             DataTable dt = DataAccess.Instance.GetData(sql);
             foreach (DataRow res in dt.Rows)
             {
-                Couleur nouveau = new Couleur(res["nom_couleur"].ToString(), int.Parse(res["id_couleur"].ToString());
+                Couleur nouveau = new Couleur(res["nom_couleur"].ToString(), int.Parse(res["id_couleur"].ToString()));
                 lesCouleurs.Add(nouveau);
             }
             return lesCouleurs;

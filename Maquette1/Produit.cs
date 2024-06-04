@@ -47,24 +47,6 @@ namespace Maquette1
         }
 
 
-        public int Read()
-        {
-            String sql = "SELECT * from Produit";
-            try
-            {
-                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                foreach (DataRow res in dataTable.Rows)
-                {
-                    Salarie nouveau = new Produit(int.Parse(res["num_produit"].ToString()),
-                    int.Parse(res["num_categorie"].ToString(), res["nom_produit"].ToString());
-                    LesProduits.Add(nouveau);
-                }
-                return dataTable.Rows.Count;
-            }
-            catch (NpgsqlException e)
-            { Console.WriteLine("pb de requete : " + e); return 0; }
-        }
+        
     }
 }
