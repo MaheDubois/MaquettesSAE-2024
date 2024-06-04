@@ -53,7 +53,7 @@ namespace Maquette1
             try
             {
                 Connexion = new NpgsqlConnection();
-                Connexion.ConnectionString = @"lien base";
+                Connexion.ConnectionString = @"new;Database=BotanicTP11;Password=***********;Username=maniglil;Port=5433";
                 // à compléter dans les ""
                 // @ sert à enlever tout pb avec les caractères
                 Connexion.Open();
