@@ -11,16 +11,6 @@ namespace Maquette1
 {
     public class ApplicationData
     {
-        private NpgsqlConnection connexion = null;   // futur lien à la BD
-        private ObservableCollection<Magasin> lesMagasins;
-
-        public ObservableCollection<Magasin> LesMagasins 
-        { 
-            get { return lesMagasins; }
-            
-            set { lesMagasins = value; }
-        }
-
         //public NpgsqlConnection Connexion
         //{
         //    get
@@ -33,31 +23,10 @@ namespace Maquette1
         //        this.connexion = value;
         //    }
         //}
-
         public ApplicationData()
         {
-
-            this.ConnexionBD();
             //this.Read();
         }
-        public void ConnexionBD()
-        {
-            try
-            {
-                Connexion = new NpgsqlConnection();
-                Connexion.ConnectionString = @"new;Database=BotanicTP11;Password=***********;Username=maniglil;Port=5433";
-                // à compléter dans les ""
-                // @ sert à enlever tout pb avec les caractères
-                Connexion.Open();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("pb de connexion : " + e);
-                // juste pour le debug : à transformer en MsgBox
-            }
-        }
-        
-
 
         //public void Read()
         //{
@@ -107,69 +76,6 @@ namespace Maquette1
         //        // juste pour le debug : à transformer en MsgBox
         //        return 0;
         //    }
-        //}
-        public DataTable GetData(string selectSQL)
-            {
-                try
-                {
-                    NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(selectSQL, Connexion);
-                    DataTable dataTable = new DataTable();
-                    dataAdapter.Fill(dataTable);
-                    return dataTable;
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("pb avec : " + selectSQL + e.ToString());
-                    return null;
-                }
-            }
-            public int SetData(string setSQL)
-            {
-
-                try
-                {
-                    NpgsqlCommand sqlCommand = new NpgsqlCommand(setSQL, Connexion);
-                    int nbLines = sqlCommand.ExecuteNonQuery();
-                    return nbLines;
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("pb avec : " + setSQL + e.ToString());
-                    return 0;
-                }
-            }
-
-            public void DeconnexionBD()
-            {
-                try
-                {
-                    Connexion.Close();
-                }
-                catch (Exception e)
-                { Console.WriteLine("pb à la déconnexion : " + e); }
-            }
-        public int Read()
-        {
-            String sql = "SELECT nummagasin,nommagasin,rue,cp,ville,horaire FROM Client";
-            try
-            {
-                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                foreach (DataRow res in dataTable.Rows)
-                {
-                    Magasin nouveau = new Magasin(int.Parse(res["nummagasin"].ToString()),
-                    res["nommagasin"].ToString(), res["rue"].ToString(),
-                    res["cp"].ToString(), res["ville"].ToString(),
-                    res["horaire"].ToString());
-                    LesMagasins.Add(nouveau);
-                }
-                return dataTable.Rows.Count;
-            }
-            catch (NpgsqlException e)
-            { Console.WriteLine("pb de requete : " + e); return 0; }
-        }
+        //}  
     }
-
-
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -34,8 +35,24 @@ namespace Maquette1
             this.Horaire = horaire;
         }
 
+        public static ObservableCollection<Magasin> Read()
+        {
+            ObservableCollection<Magasin> lesMagasins = new ObservableCollection<Magasin>();
+            String sql = "SELECT nummagasin,nommagasin,rue,cp,ville,horaire FROM Client";
+            DataTable dt = DataAccess.Instance.GetData(sql);
+            foreach (DataRow res in dt.Rows)
+            {
+                Magasin nouveau = new Magasin(int.Parse(res["nummagasin"].ToString()),
+                res["nommagasin"].ToString(), res["rue"].ToString(),
+                res["cp"].ToString(), res["ville"].ToString(),
+                res["horaire"].ToString());
+                lesMagasins.Add(nouveau);
+            }
+            
+            return lesMagasins;
+        }
 
-        
+
 
     }
 }
