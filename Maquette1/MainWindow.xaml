@@ -99,7 +99,7 @@
                         Margin="20,33,0,0"
                         Content="Type commande :"
                         FontWeight="Bold" />
-                    <RadioButton Margin="5,40,0,0" Content="Centrale" />
+                    <RadioButton Margin="5,40,0,0" Content="Centrale" Background="red" />
                     <RadioButton Margin="10,40,0,0" Content="Locale" />
                 </StackPanel>
 
