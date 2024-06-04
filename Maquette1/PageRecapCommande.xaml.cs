@@ -19,13 +19,12 @@ namespace Maquette1
     /// </summary>
     public partial class PageRecapCommande : Window
     {
-        public string NomMagasin;
+        
         private bool seConnecter = false;
         public PageRecapCommande()
         {
             InitializeComponent();
-         PageConnexion pageConnexion = new PageConnexion();
-            NomMagasin = pageConnexion.tb_NomMagasin.Text;
+            
         }
         private void ButtonSeConnecter_Click(object sender, RoutedEventArgs e)
         {

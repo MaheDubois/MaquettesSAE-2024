@@ -38,7 +38,7 @@ namespace Maquette1
         public static ObservableCollection<Magasin> Read()
         {
             ObservableCollection<Magasin> lesMagasins = new ObservableCollection<Magasin>();
-            String sql = "SELECT nummagasin,nommagasin,rue,cp,ville,horaire FROM Client";
+            String sql = "SELECT nummagasin,nommagasin,rue,cp,ville,horaire FROM Magasin";
             DataTable dt = DataAccess.Instance.GetData(sql);
             foreach (DataRow res in dt.Rows)
             {
