@@ -15,12 +15,8 @@ namespace Maquette1
         public ApplicationData()
         {
             this.LesCouleurs = Couleur.Read();
+            this.LesCouleurs.ToString();
 
-
-
-
-
-            
         }
 
         public ObservableCollection<Couleur> LesCouleurs { get => lesCouleurs; set => lesCouleurs = value; }

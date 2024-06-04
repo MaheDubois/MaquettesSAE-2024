@@ -174,13 +174,10 @@
                     Content="Filtre couleur :"
                     FontWeight="Bold" />
                 <ComboBox
+                    ItemsSource="{Binding LesCouleurs}"
                     x:Name="cb_FiltreCouleur"
                     Width="90"
                     Margin="5,0,0,0">
-                    <ComboBoxItem>Rouge</ComboBoxItem>
-                    <ComboBoxItem>Vert</ComboBoxItem>
-                    <ComboBoxItem>Jaune</ComboBoxItem>
-                    <ComboBoxItem>...</ComboBoxItem>
                 </ComboBox>
             </StackPanel>
         </Grid>
