@@ -146,7 +146,14 @@
                 </ListBox>
 
                 <Button Content="Valider" Margin="150,20,150,0" BorderThickness="3,3,3,3" Background="#FF5AC35A"></Button>
-                
+                <DataGrid Name="dgClients" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding LesClients}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0" MinHeight="150" >
+                    <DataGrid.Columns >
+
+                        <DataGridTextColumn Header="numSal" Binding="{Binding num_salarie}" Width="80" />
+                        <DataGridTextColumn Header="login," Binding="{Binding login_salarie}" Width="80" />
+                        <DataGridTextColumn Header="pw" Binding="{Binding mdp_salarie}" Width="80" />
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>
         </Grid>
         <Grid Grid.Column="2" Background="White">

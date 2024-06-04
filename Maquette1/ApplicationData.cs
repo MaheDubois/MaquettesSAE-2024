@@ -43,18 +43,7 @@ namespace Maquette1
         //    }
         //}
 
-        public NpgsqlConnection Connexion
-        {
-            get
-            {
-                return this.connexion;
-            }
-
-            set
-            {
-                this.connexion = value;
-            }
-        }
+    
 
         public ApplicationData()
         {
@@ -107,53 +96,14 @@ namespace Maquette1
             //        return 0;
             //    }
             //}
-            public DataTable GetData(string selectSQL)
-            {
-                try
-                {
-                    NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(selectSQL, Connexion);
-                    DataTable dataTable = new DataTable();
-                    dataAdapter.Fill(dataTable);
-                    return dataTable;
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("pb avec : " + selectSQL + e.ToString());
-                    return null;
-                }
-            }
-            public int SetData(string setSQL)
-            {
-
-                try
-                {
-                    NpgsqlCommand sqlCommand = new NpgsqlCommand(setSQL, Connexion);
-                    int nbLines = sqlCommand.ExecuteNonQuery();
-                    return nbLines;
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("pb avec : " + setSQL + e.ToString());
-                    return 0;
-                }
-            }
-
-            public void DeconnexionBD()
-            {
-                try
-                {
-                    Connexion.Close();
-                }
-                catch (Exception e)
-                { Console.WriteLine("pb à la déconnexion : " + e); }
-            }
+            
+           
 
         public int Read()
         {
             String sql = "SELECT * from salarie";
             try
             {
-                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(sql, Connexion);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 foreach (DataRow res in dataTable.Rows)
