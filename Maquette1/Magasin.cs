@@ -48,11 +48,7 @@ namespace Maquette1
                 res["horaire"].ToString());
                 lesMagasins.Add(nouveau);
             }
-            
             return lesMagasins;
         }
-
-
-
     }
 }

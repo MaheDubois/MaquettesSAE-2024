@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,13 +25,12 @@ namespace Maquette1
         public PageRecapCommande()
         {
             InitializeComponent();
-            
         }
         private void ButtonSeConnecter_Click(object sender, RoutedEventArgs e)
         {
             InitializeComponent();
             seConnecter = true;
-        }
 
+        }
     }
 }
