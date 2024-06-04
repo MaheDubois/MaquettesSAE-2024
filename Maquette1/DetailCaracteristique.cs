@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +37,20 @@ namespace Maquette1
         public override string? ToString()
         {
             return base.ToString();
+        }
+
+        public static ObservableCollection<DetailCaracteristique> Read()
+        {
+            ObservableCollection<DetailCaracteristique> lesDetailsCaracteristiques = new ObservableCollection<DetailCaracteristique>();
+            String sql = "SELECT * from botanic.DetailCaracteristique";
+            DataTable dt = DataAccess.Instance.GetData(sql);
+            foreach (DataRow res in dt.Rows)
+            {
+                DetailCaracteristique nouveau = new DetailCaracteristique(int.Parse(res["num_produit"].ToString()), int.Parse(res["num_caracteristique"].ToString()), 
+                res["valeur_caracteristique"].ToString());
+                lesDetailsCaracteristiques.Add(nouveau);
+            }
+            return lesDetailsCaracteristiques;
         }
     }
 
