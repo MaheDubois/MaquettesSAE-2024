@@ -11,52 +11,22 @@ namespace Maquette1
 {
     public class ApplicationData
     {
+        //public NpgsqlConnection Connexion
+        //{
+        //    get
+        //    {
+        //        return this.connexion;
+        //    }
 
-        //private ObservableCollection<Client> lesClients;
-        private NpgsqlConnection connexion = null;   // futur lien à la BD
-
-        private ObservableCollection<Salarie> lesSalaries;
-
-        public ObservableCollection<Salarie> LesSalaries
-        {
-            get
-            {
-                return this.lesSalaries;
-            }
-
-            set
-            {
-                this.lesSalaries = value;
-            }
-        }
-
-        private ObservableCollection<Produit> lesProduits;
-
-        public ObservableCollection<Produit> LesProduits
-        {
-            get
-            {
-                return this.lesProduits;
-            }
-
-            set
-            {
-                this.lesProduits = value;
-            }
-        }
-
-
-
-    
-
+        //    set
+        //    {
+        //        this.connexion = value;
+        //    }
+        //}
         public ApplicationData()
         {
-
-            
-           
+            //this.Read();
         }
-
-
 
         //public void Read()
         //{
@@ -86,8 +56,26 @@ namespace Maquette1
         //    catch (SqlException e)
         //    { Console.WriteLine("pb de requete : " + e); return 0; }
         //}
-
-
-       
+        //public int Create(Client c)
+        //{
+        //    int nb;
+        //    String sql = $"insert into client (nom,prenom,email,genre,telephone, dateNaissance)"
+        //    + $" values ('{c.Nom}','{c.Prenom}','{c.Email}'"
+        //    + $",'{(char)c.Genre}','{c.Telephone}', "
+        //    + $"'{c.DateNaissance.Year}-{c.DateNaissance.Month}-{c.DateNaissance.Day}'); ";
+        //    try
+        //    {
+        //        SqlCommand cmd = new SqlCommand(sql, Connexion);
+        //        nb = cmd.ExecuteNonQuery();
+        //        return nb;
+        //        //nb permet de connaître le nb de lignes affectées par un insert, update, delete
+        //    }
+        //    catch (Exception sqlE)
+        //    {
+        //        Console.WriteLine("pb de requete : " + sql + "" + sqlE);
+        //        // juste pour le debug : à transformer en MsgBox
+        //        return 0;
+        //    }
+        //}  
     }
 }
