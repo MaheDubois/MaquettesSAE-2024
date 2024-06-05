@@ -34,7 +34,7 @@ namespace Maquette1
 
         public override string? ToString()
         {
-            return base.ToString();
+            return this.Nom_caracteristique;
         }
 
         public static ObservableCollection<Caracteristique> Read()
