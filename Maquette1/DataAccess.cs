@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,11 @@ namespace Maquette1
     public class DataAccess
     {
         private static DataAccess instance;
-        private static string strConnexion = "Host= srv-peda-new;Port=5433;Database=BotanicTP11;Username=duboimah;Password=nFUvkk;Persist Security Info=True";
+        string login = "";
+
+        private static string strConnexion =  "Host= srv-peda-new;Port=5433;Database=BotanicTP11 Username=duboimah Password=nFUvkk Persist Security Info=True";
+
+    
         private DataAccess()
         {
             ConnexionBD();

@@ -23,6 +23,10 @@ namespace Maquette1
     public partial class PageConnexion : Window
     {
 
+        
+
+
+
         private bool seConnecter = false;
 
         public PageConnexion()
