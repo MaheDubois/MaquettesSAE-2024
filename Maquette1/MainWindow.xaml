@@ -9,6 +9,9 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
+    <Window.DataContext>
+        <local:ApplicationData x:Name="data"></local:ApplicationData>
+    </Window.DataContext>
     <TabControl>
         <TabItem Header="Commander">
             <Grid Background="#FFDDFFDD">
@@ -167,11 +170,8 @@
                         <ComboBox
                     x:Name="cb_FiltreCouleur"
                     Width="90"
-                    Margin="5,0,0,0">
-                            <ComboBoxItem>Rouge</ComboBoxItem>
-                            <ComboBoxItem>Vert</ComboBoxItem>
-                            <ComboBoxItem>Jaune</ComboBoxItem>
-                            <ComboBoxItem>...</ComboBoxItem>
+                    Margin="5,0,0,0"
+                    ItemsSource="{Binding LesCouleurs}">
                         </ComboBox>
                     </StackPanel>
                 </Grid>
