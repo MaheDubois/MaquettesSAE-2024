@@ -34,19 +34,20 @@ namespace Maquette1
 
         public override string? ToString()
         {
-            return base.ToString();
+            return this.Nom_couleur;
         }
 
         public static ObservableCollection<Couleur> Read()
         {
             ObservableCollection<Couleur> lesCouleurs = new ObservableCollection<Couleur>();
-            String sql = "SELECT * from botanic.couleur";
+            String sql = "SELECT nom_couleur, id_couleur from botanic.couleur";
             DataTable dt = DataAccess.Instance.GetData(sql);
             foreach (DataRow res in dt.Rows)
             {
                 Couleur nouveau = new Couleur(res["nom_couleur"].ToString(), int.Parse(res["id_couleur"].ToString()));
                 lesCouleurs.Add(nouveau);
             }
+            Console.WriteLine(lesCouleurs);
             return lesCouleurs;
         }
 

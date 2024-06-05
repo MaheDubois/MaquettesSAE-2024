@@ -11,20 +11,14 @@ namespace Maquette1
 {
     public class ApplicationData
     {
-        
+        ObservableCollection<Couleur> lesCouleurs;
         public ApplicationData()
         {
-            Magasin.Read();
-            Caracteristique.Read();
-            Categorie.Read();
-            CommandeAchat.Read();
-            Couleur.Read();
-            DetailCommande.Read();
-            DetailCaracteristique.Read();
-            Fournisseur.Read();
-            Fournit.Read();
+            this.LesCouleurs = Couleur.Read();
+            this.LesCouleurs.ToString();
 
         }
- 
+
+        public ObservableCollection<Couleur> LesCouleurs { get => lesCouleurs; set => lesCouleurs = value; }
     }
 }

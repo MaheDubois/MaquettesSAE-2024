@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -47,6 +48,19 @@ namespace Maquette1
         }
 
 
-        
+        public static ObservableCollection<Produit> Read()
+        {
+            ObservableCollection<Produit> lesProduits = new ObservableCollection<Produit>();
+            String sql = "SELECT * from botanic.Produit";
+            DataTable dt = DataAccess.Instance.GetData(sql);
+            foreach (DataRow res in dt.Rows)
+            {
+                Produit nouveau = new Produit(int.Parse(res["num_produit"].ToString()), int.Parse(res["num_categorie"].ToString()),
+                res["nom_produit"].ToString(), res["taille_produit"].ToString(), res["description_produit"].ToString(), double.Parse(res["prix_vente"].ToString()));
+                lesProduits.Add(nouveau);
+            }
+            return lesProduits;
+        }
     }
+    
 }
