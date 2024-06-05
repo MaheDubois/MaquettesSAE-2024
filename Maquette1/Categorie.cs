@@ -51,7 +51,7 @@ namespace Maquette1
 
         public override string? ToString()
         {
-            return base.ToString();
+            return this.LibelleCategorie;
         }
     }
    
