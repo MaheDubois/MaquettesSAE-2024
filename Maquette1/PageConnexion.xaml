@@ -9,6 +9,9 @@
     Width="527"
     Height="374"
     mc:Ignorable="d">
+    <Window.DataContext>
+        <local:ApplicationData x:Name="dataConnextion" />
+    </Window.DataContext>
     <Grid
         x:Name="Grid"
         Margin="0,0,0,-16"
@@ -29,7 +32,8 @@
                 Width="260"
                 Height="25"
                 Margin="5,0,0,0"
-                HorizontalAlignment="Left" />
+                HorizontalAlignment="Left"
+                Text="{Binding user}" />
             <Label
                 x:Name="lb_Mdp"
                 Margin="0,10,10,0"

@@ -11,11 +11,14 @@ namespace Maquette1
     public class DataAccess
     {
         private static DataAccess instance;
+        public string mdp = "";
+        public string user = "";
         private static string strConnexion = "Host= srv-peda-new;Port=5433;Database=BotanicTP11;Username=duboimah;Password=nFUvkk;Persist Security Info=True";
         private DataAccess()
         {
+            
+            //strConnexion = "Host= srv-peda-new;Port=5433;Database=BotanicTP11;Username="+user+";Password="+mdp+";Persist Security Info=True";
             ConnexionBD();
-
         }
 
         public static DataAccess Instance
