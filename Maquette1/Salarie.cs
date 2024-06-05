@@ -10,18 +10,19 @@ namespace Maquette1
 {
     public class Salarie
     {
-        int numsalarie;
+        int numsalarie, numMagasin;
         string login_salarie, mdp_salarie;
 
         public int Numsalarie { get => numsalarie; set => numsalarie = value; }
         public string Login_salarie { get => login_salarie; set => login_salarie = value; }
-        public string Mdp_salarie { get => mdp_salarie; set => mdp_salarie = value; }
+        public int NumMagasin { get => numMagasin; set => numMagasin = value; }
 
-        public Salarie(int numsalarie, string login_salarie, string mdp_salarie)
+        public Salarie(int numsalarie, string login_salarie, int numMagasin)
         {
             Numsalarie = numsalarie;
             Login_salarie = login_salarie;
-            Mdp_salarie = mdp_salarie;
+            NumMagasin = numMagasin;
+            
         }
 
         public override bool Equals(object? obj)
@@ -42,12 +43,12 @@ namespace Maquette1
         public static ObservableCollection<Salarie> Read()
         {
             ObservableCollection<Salarie> lesSalaries = new ObservableCollection<Salarie>();
-            String sql = "SELECT num_salarie, login_salarie, mdp_salarie FROM botanic.salarie";
+            String sql = "SELECT * FROM botanic.salarie";
             DataTable dt = DataAccess.Instance.GetData(sql);
             foreach (DataRow res in dt.Rows)
             {
                 Salarie nouveau = new Salarie(int.Parse(res["num_salarie"].ToString()), res["login_salarie"].ToString(),
-                res["mdp_salarie"].ToString());
+                int.Parse(res["num_magasin"].ToString()));
                 lesSalaries.Add(nouveau);
             }
             return lesSalaries;

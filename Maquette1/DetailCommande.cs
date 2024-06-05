@@ -28,11 +28,11 @@ namespace Maquette1
         public static ObservableCollection<DetailCommande> Read()
         {
             ObservableCollection<DetailCommande> lesDetailsCommandes = new ObservableCollection<DetailCommande>();
-            String sql = "SELECT num_commande, num_produit, num_fournisseur, quantite_commande FROM botanic.detail_commande";
+            String sql = "SELECT * FROM botanic.detail_commande";
             DataTable dt = DataAccess.Instance.GetData(sql);
             foreach (DataRow res in dt.Rows)
             {
-                DetailCommande nouveau = new DetailCommande(int.Parse(res["num_commande"].ToString()), int.Parse(res["num_produit"].ToString()), int.Parse(res["num_fournisseur"].ToString()), int.Parse(res["quantite_commande"].ToString()));
+                DetailCommande nouveau = new DetailCommande(int.Parse(res["num_commande"].ToString()), int.Parse(res["num_produit"].ToString()), int.Parse(res["num_fournisseur"].ToString()), int.Parse(res["quantite_commandee"].ToString()));
                 lesDetailsCommandes.Add(nouveau);
             }
             return lesDetailsCommandes;

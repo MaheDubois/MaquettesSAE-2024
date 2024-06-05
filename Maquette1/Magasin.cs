@@ -38,13 +38,13 @@ namespace Maquette1
         public static ObservableCollection<Magasin> Read()
         {
             ObservableCollection<Magasin> lesMagasins = new ObservableCollection<Magasin>();
-            String sql = "SELECT nummagasin,nommagasin,rue,cp,ville,horaire FROM botanic.magasin";
+            String sql = "SELECT * FROM botanic.magasin";
             DataTable dt = DataAccess.Instance.GetData(sql);
             foreach (DataRow res in dt.Rows)
             {
-                Magasin nouveau = new Magasin(int.Parse(res["nummagasin"].ToString()),
-                res["nommagasin"].ToString(), res["rue"].ToString(),
-                res["cp"].ToString(), res["ville"].ToString(),
+                Magasin nouveau = new Magasin(int.Parse(res["num_magasin"].ToString()),
+                res["nom_magasin"].ToString(), res["adresse_rue_magasin"].ToString(),
+                res["adresse_cp_magasin"].ToString(), res["adresse_ville_magasin"].ToString(),
                 res["horaire"].ToString());
                 lesMagasins.Add(nouveau);
             }
