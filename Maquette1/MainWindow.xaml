@@ -10,7 +10,7 @@
     Height="450"
     mc:Ignorable="d">
     <Window.DataContext>
-        <local:ApplicationData x:Name="data"/>
+        <local:ApplicationData x:Name="data"></local:ApplicationData>
     </Window.DataContext>
     <TabControl>
         <TabItem Header="Commander">
@@ -171,7 +171,7 @@
                     x:Name="cb_FiltreCouleur"
                     Width="90"
                     Margin="5,0,0,0"
-                            ItemsSource="{Binding LesCouleurs}">
+                    ItemsSource="{Binding LesCouleurs}">
                         </ComboBox>
                     </StackPanel>
                 </Grid>
