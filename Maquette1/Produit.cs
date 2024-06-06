@@ -44,7 +44,7 @@ namespace Maquette1
 
         public override string? ToString()
         {
-            return base.ToString();
+            return this.Nom_produit + "           " + this.Taille_produit + "m" + "            "+ this.Prix_vente +" eur";
         }
 
 
