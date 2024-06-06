@@ -42,9 +42,11 @@ namespace Maquette1
             //}
         }
 
-        private void bt_Valider_Click()
+        private void bt_Valider_Click(object sender, RoutedEventArgs e)
         {
-
+            int enteredNumber = dialog.EnteredNumber.Value;
+            // Utilisez le nombre entré par l'utilisateur
+            MessageBox.Show($"Entre: {enteredNumber}");
         }
 
         //private void LoadData()
