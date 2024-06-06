@@ -42,6 +42,11 @@ namespace Maquette1
             //}
         }
 
+        private void bt_Valider_Click()
+        {
+
+        }
+
         //private void LoadData()
         //{
         //    try

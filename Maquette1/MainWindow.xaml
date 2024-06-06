@@ -155,7 +155,7 @@
                     Margin="150,20,150,0"
                     Background="#FF5AC35A"
                     BorderThickness="3,3,3,3"
-                    Content="Valider" />
+                    Content="Valider" Click="bt_Valider_Click" />
 
                     </StackPanel>
                 </Grid>
