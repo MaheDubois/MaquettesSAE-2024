@@ -49,10 +49,9 @@ namespace Maquette1
         {
             return base.GetHashCode();
         }
-
         public override string? ToString()
         {
-            return base.ToString();
+            return this.designation_type;
         }
     }
 }

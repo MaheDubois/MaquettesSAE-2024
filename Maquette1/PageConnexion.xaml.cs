@@ -34,9 +34,10 @@ namespace Maquette1
 
         private void ButtonSeConnecter_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = new MainWindow();
             InitializeComponent();
             SeConnecter = true;
-            
+            mainWindow.ShowDialog();
         }
     }
 }
