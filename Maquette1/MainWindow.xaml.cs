@@ -26,53 +26,17 @@ namespace Maquette1
             InitializeComponent();
             Couleur.Read();
 
-            //LoadData();
-            //PageConnexion fenetreConnexion = new PageConnexion();
-            //fenetreConnexion.ShowDialog();
-            //if (fenetreConnexion.DialogResult == false)
-            //{
-            //    System.Windows.Application.Current.Shutdown();
-            //}
-
-            //PageRecapCommande fenetreCommmande = new PageRecapCommande();
-            //fenetreCommmande.ShowDialog();
-            //if (fenetreCommmande.DialogResult == false)
-            //{
-            //    System.Windows.Application.Current.Shutdown();
-            //}
+            
         }
 
-        private void bt_Valider_Click(object sender, RoutedEventArgs e)
+        private void cb_FiltreType_Selected(object sender, RoutedEventArgs e)
         {
-            int enteredNumber = dialog.EnteredNumber.Value;
-            // Utilisez le nombre entré par l'utilisateur
-            MessageBox.Show($"Entre: {enteredNumber}");
+
         }
 
-        //private void LoadData()
-        //{
-        //    try
-        //    {
-        //        DataAccess dataAccess = DataAccess.Instance;
-        //        Console.WriteLine("Attempting to retrieve data...");
-        //        DataTable dataTable = dataAccess.GetData("SELECT * FROM YourTableName");
+        private void bt_Ajouter_Click()
+        {
 
-        //        if (dataTable != null && dataTable.Rows.Count > 0)
-        //        {
-        //            Console.WriteLine("Data retrieved successfully.");
-        //            dataGrid.ItemsSource = dataTable.DefaultView;
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("No data returned from the query.");
-        //            Console.WriteLine("DataTable is null or has no rows.");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error loading data: " + ex.Message);
-        //        Console.WriteLine("Error loading data: " + ex.Message);
-        //    }
-        //}
+        }
     }
 }

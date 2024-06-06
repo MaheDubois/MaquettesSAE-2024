@@ -39,6 +39,8 @@ namespace Maquette1
             return lesCaracteristiques;
         }
 
+
+
         public override bool Equals(object? obj)
         {
             return base.Equals(obj);
