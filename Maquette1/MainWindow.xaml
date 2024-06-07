@@ -45,7 +45,7 @@
                             Margin="0,5,0,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Text="Rechercher"
+                            Text=""
                             TextChanged="tb_Rechercher_TextChanged" />
                         <StackPanel Margin="0,8,0,0" Orientation="Horizontal">
                             <Button
@@ -101,7 +101,7 @@
                             <ComboBox
                                 x:Name="cb_FiltreType"
                                 Width="90"
-                                ItemsSource="{Binding LesTypesProduits}" />
+                                ItemsSource="{Binding LesTypesProduits}"  />
                             <ComboBox
                                 x:Name="cb_FiltreCategorie"
                                 Width="140"
@@ -178,7 +178,8 @@
                             x:Name="cb_FiltreCouleur"
                             Width="90"
                             Margin="5,0,0,0"
-                            ItemsSource="{Binding LesCouleurs}" />
+                            ItemsSource="{Binding LesCouleurs}" 
+                            />
                     </StackPanel>
                 </Grid>
 

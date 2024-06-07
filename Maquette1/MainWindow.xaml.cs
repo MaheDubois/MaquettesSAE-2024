@@ -22,24 +22,43 @@ namespace Maquette1
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    
+
     public partial class MainWindow : Window
     {
         public double prixTotal = 0;
         public MainWindow()
-        { 
+        {
+
+            PageConnexion pageConnexion = new PageConnexion();
+            pageConnexion.ShowDialog();
+            
+
+
             InitializeComponent();
             
+           
+            dgProduit.Items.Filter = Rechercher;
+
         }
 
         private bool Rechercher(object obj)
         {
             Produit unProduit = obj as Produit;
-            if (String.IsNullOrEmpty(tb_Rechercher.Text))
+            if (String.IsNullOrEmpty(tb_Rechercher.Text) || tb_Rechercher.Text=="Rechercher")
                 return true;
             else
                 return (unProduit.Nom_produit.StartsWith(tb_Rechercher.Text, StringComparison.OrdinalIgnoreCase));
         }
+
+        private bool RechercherCouleur(object obj)
+        {
+            Produit unProduit = obj as Produit;
+            if (String.IsNullOrEmpty(tb_Rechercher.Text))
+                return true;
+            else
+                return (unProduit.Id_couleur.ToString().StartsWith(tb_Rechercher.Text, StringComparison.OrdinalIgnoreCase));
+        }
+    
 
         
 
@@ -89,9 +108,24 @@ namespace Maquette1
 
         private void tb_Rechercher_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (dgProduit.ItemsSource != null)            
+               CollectionViewSource.GetDefaultView(dgProduit.ItemsSource).Refresh();
             
-                CollectionViewSource.GetDefaultView(dgProduit.ItemsSource).Refresh();
+             
         }
+
+        private void cb_FiltreType_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void cb_FiltreCouleur_Selected(object sender, RoutedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dgProduit.ItemsSource).Refresh();
+        }
+
+    
+
 
         //private void bt_ValiderVisu_Click(object sender, RoutedEventArgs e)
         //{

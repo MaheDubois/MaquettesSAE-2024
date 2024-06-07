@@ -30,6 +30,7 @@ namespace Maquette1
         ObservableCollection<Produit> lesProduitsArchives = new ObservableCollection<Produit>();
         public ApplicationData()
         {
+            
             this.LesCouleurs = Couleur.Read();
             this.LesCouleurs.ToString();
 
