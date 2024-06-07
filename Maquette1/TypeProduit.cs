@@ -51,7 +51,7 @@ namespace Maquette1
         }
         public override string? ToString()
         {
-            return this.designation_type;
+            return this.designation_type.ToString();
         }
     }
 }

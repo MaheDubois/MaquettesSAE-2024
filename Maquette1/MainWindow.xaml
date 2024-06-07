@@ -45,7 +45,8 @@
                             Margin="0,5,0,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Text="Rechercher" />
+                            Text="Rechercher"
+                            TextChanged="tb_Rechercher_TextChanged" />
                         <StackPanel Margin="0,8,0,0" Orientation="Horizontal">
                             <Button
                                 x:Name="bt_motclef1"
@@ -100,8 +101,7 @@
                             <ComboBox
                                 x:Name="cb_FiltreType"
                                 Width="90"
-                                ItemsSource="{Binding LesTypesProduits}"
-                                 />
+                                ItemsSource="{Binding LesTypesProduits}" />
                             <ComboBox
                                 x:Name="cb_FiltreCategorie"
                                 Width="140"
@@ -131,7 +131,7 @@
                         </StackPanel>
 
                         <DataGrid
-                            Name="dgClients"
+                            x:Name="dgProduits"
                             Width="500"
                             MinHeight="30"
                             MaxHeight="100"
