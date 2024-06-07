@@ -30,6 +30,7 @@ namespace Maquette1
         ObservableCollection<Produit> lesProduitsArchives = new ObservableCollection<Produit>();
         public ApplicationData()
         {
+            
             this.LesCouleurs = Couleur.Read();
             this.LesCouleurs.ToString();
 
@@ -45,7 +46,7 @@ namespace Maquette1
             this.LesDetailsCaracteristiques = DetailCaracteristique.Read();
             this.LesDetailsCaracteristiques.ToString();
 
-            this.LesDetailsCommandes=DetailCommande.Read();
+            this.LesDetailsCommandes = DetailCommande.Read();
             this.LesDetailsCommandes.ToString();
 
             this.LesFournisseurs = Fournisseur.Read();

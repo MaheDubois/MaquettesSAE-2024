@@ -6,20 +6,19 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Maquette1
 {
     public class DataAccess
     {
         private static DataAccess instance;
-        public string mdp = "";
-        public string user = "";
-        private static string strConnexion = "Host= srv-peda-new;Port=5433;Database=BotanicTP11;Username=duboimah;Password=nFUvkk;Persist Security Info=True";
-        private DataAccess()
+      
+
+
+        public DataAccess()
         {
             
-            //strConnexion = "Host= srv-peda-new;Port=5433;Database=BotanicTP11;Username="+user+";Password="+mdp+";Persist Security Info=True";
-            ConnexionBD();
         }
 
         public static DataAccess Instance
@@ -39,7 +38,7 @@ namespace Maquette1
             get;
             set;
         }
-        public void ConnexionBD()
+        public void ConnexionBD(string strConnexion)
         {
             try
             {
