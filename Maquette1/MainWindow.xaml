@@ -106,7 +106,7 @@
                                 x:Name="cb_FiltreCategorie"
                                 Width="140"
                                 Margin="118,0,0,0"
-                                ItemsSource="{Binding LesCategories}" />
+                                ItemsSource="{Binding LesCategories}" SelectionChanged="cb_FiltreCategorie_SelectionChanged" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <Label

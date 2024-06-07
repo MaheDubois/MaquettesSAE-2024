@@ -44,10 +44,19 @@ namespace Maquette1
         private bool Rechercher(object obj)
         {
             Produit unProduit = obj as Produit;
-            if (String.IsNullOrEmpty(tb_Rechercher.Text) || tb_Rechercher.Text=="Rechercher")
+            if (String.IsNullOrEmpty(tb_Rechercher.Text) )
                 return true;
             else
                 return (unProduit.Nom_produit.StartsWith(tb_Rechercher.Text, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private bool FiltrageCategorie(object obj)
+        {
+            Produit unProduit = obj as Produit;
+            if (cb_FiltreCategorie.SelectedItem == null)
+                return true;
+            else
+                return (unProduit.Num_categorie.ToString().StartsWith(tb_Rechercher.Text, StringComparison.OrdinalIgnoreCase));
         }
 
         private bool RechercherCouleur(object obj)
@@ -58,6 +67,8 @@ namespace Maquette1
             else
                 return (unProduit.Id_couleur.ToString().StartsWith(tb_Rechercher.Text, StringComparison.OrdinalIgnoreCase));
         }
+
+
     
 
         
@@ -124,7 +135,20 @@ namespace Maquette1
             CollectionViewSource.GetDefaultView(dgProduit.ItemsSource).Refresh();
         }
 
-    
+        private void cb_FiltreCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(cb_FiltreCategorie.SelectedItem != null)
+            {
+                switch (cb_FiltreCategorie.SelectedItem)
+                {
+                    //case "Plantes":
+
+                }
+            }
+
+        }
+
+
 
 
         //private void bt_ValiderVisu_Click(object sender, RoutedEventArgs e)
