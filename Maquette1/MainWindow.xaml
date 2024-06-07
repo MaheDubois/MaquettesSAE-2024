@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
     Width="800"
-    Height="450"
+    Height="470"
     mc:Ignorable="d">
     <Window.DataContext>
         <local:ApplicationData x:Name="data" />
@@ -45,8 +45,7 @@
                             Margin="0,5,0,0"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Text="Rechercher"
-                            TextChanged="tb_Rechercher_TextChanged" />
+                            Text="Rechercher" />
                         <StackPanel Margin="0,8,0,0" Orientation="Horizontal">
                             <Button
                                 x:Name="bt_motclef1"
@@ -163,7 +162,8 @@
                             Margin="150,20,150,0"
                             Background="#FF5AC35A"
                             BorderThickness="3,3,3,3"
-                            Content="Ajouter" Click="bt_Ajouter_Click" />
+                            Click="bt_Ajouter_Click"
+                            Content="Ajouter" />
 
                     </StackPanel>
                 </Grid>
@@ -241,7 +241,11 @@
                                 x:Name="lb_DateCreation"
                                 Margin="80,3,0,0"
                                 Content="Création commande :" />
-                            <DatePicker x:Name="dt_DateCréation" Background="White" Width="150" Height="25"/>
+                            <DatePicker
+                                x:Name="dt_DateCréation"
+                                Width="150"
+                                Height="25"
+                                Background="White" />
                         </StackPanel>
                         <Label
                             x:Name="lb_DétailCommande"
@@ -254,8 +258,8 @@
                                 x:Name="lib_Transport"
                                 Width="125"
                                 Margin="5,0,0,0"
-                                Background="White" 
-                                ItemsSource="{Binding LesModesTransports}"/>
+                                Background="White"
+                                ItemsSource="{Binding LesModesTransports}" />
                             <Label
                                 x:Name="lb_Fournisseur"
                                 Margin="60,0,0,0"
@@ -327,15 +331,13 @@
                             Height="150"
                             Margin="14,5,15,0"
                             BorderThickness="3,3,3,3"
-                            ItemsSource="{Binding LesCommandesArchivées}">
-                            
-                        </ListBox>
+                            ItemsSource="{Binding LesCommandesArchives}" />
                         <Button
                             x:Name="bt_ValiderVisu"
                             Margin="15,40,15,0"
                             Background="#FF5AC35A"
                             BorderThickness="3,3,3,3"
-                            Content="Valider"  />
+                            Content="Valider" />
 
                     </StackPanel>
                 </Grid>

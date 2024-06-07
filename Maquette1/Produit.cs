@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace Maquette1
 {
@@ -62,7 +63,11 @@ namespace Maquette1
             return lesProduits;
         }
 
-        
+        public void CalculPrixTotal()
+        {
+            double total = 0;
+            total += this.Prix_vente;
+        }
     }
     
 }
