@@ -12,6 +12,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -21,13 +22,16 @@ namespace Maquette1
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
+        public double prixTotal = 0;
         public MainWindow()
         { 
             InitializeComponent();
             //dgProduits.Items.Filter = Rechercher;
             Couleur.Read();
+            
         }
 
         private bool Rechercher(object obj)
@@ -63,19 +67,26 @@ namespace Maquette1
             
             if (dgProduit.SelectedItem != null)
             {
+
                 Produit produitSelectionne = (Produit)dgProduit.SelectedItem;
                 data.LesProduitsCommande.Add(produitSelectionne);
-                
-                
                 MessageBox.Show("Produit ajouté: ");
+
+                List<double> PrixT = new List<double>();
+                double Prix = produitSelectionne.Prix_vente;
+                PrixT.Add(Prix);
+                
+                foreach (double prix in PrixT)
+                {
+                    prixTotal += prix;
+                    lb_Prix.Content = prixTotal + " euro(s)";
+                }
             }
             else
             {
                 MessageBox.Show("Veuillez sélectionner un produit.");
+                
             }
-        private void bt_Ajouter_Click()
-        {
-
         }
 
         private void tb_Rechercher_TextChanged(object sender, TextChangedEventArgs e)
