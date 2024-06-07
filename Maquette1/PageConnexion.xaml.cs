@@ -22,11 +22,6 @@ namespace Maquette1
     /// </summary>
     public partial class PageConnexion : Window
     {
-
-        
-
-
-
         private bool seConnecter = false;
 
         public PageConnexion()
@@ -38,9 +33,18 @@ namespace Maquette1
 
         private void ButtonSeConnecter_Click(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
+           
+            string user = tb_Identifiant.Text;
+            string mdp = tb_Mdp.Text;
+            string co = "Host= srv-peda-new;Port=5433;Database=BotanicTP11;Username=" + user + ";Password=" + mdp + ";Persist Security Info=True";
+            DataAccess.Instance.ConnexionBD(co);
             SeConnecter = true;
+            MainWindow mainWindow = new MainWindow();
+            this.Close();
+            mainWindow.ShowDialog();
+            //Application.Current.Shutdown();
             
+
         }
     }
 }

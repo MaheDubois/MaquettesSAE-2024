@@ -11,7 +11,7 @@ namespace Maquette1
     public class Salarie
     {
         int numsalarie, numMagasin;
-        string login_salarie, mdp_salarie;
+        string login_salarie;
 
         public int Numsalarie { get => numsalarie; set => numsalarie = value; }
         public string Login_salarie { get => login_salarie; set => login_salarie = value; }
