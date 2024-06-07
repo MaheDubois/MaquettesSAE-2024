@@ -52,7 +52,7 @@ namespace Maquette1
 
         public override string? ToString()
         {
-            return base.ToString();
+            return this.designation_type.ToString();
         }
     }
 }
