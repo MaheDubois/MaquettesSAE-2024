@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Maquette1
 {
 
-    internal class Magasin
+    public class Magasin
     {
         private int numMagagasin;
         private string nomMagasin;

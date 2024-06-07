@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.TextFormatting;
+using System.Windows;
 
 namespace Maquette1
 {
@@ -25,6 +26,8 @@ namespace Maquette1
         ObservableCollection<Produit> lesProduits;
         ObservableCollection<Salarie> lesSalaries;
         ObservableCollection<TypeProduit> lesTypesProduits;
+        ObservableCollection<Produit> lesProduitsCommande = new ObservableCollection<Produit>();
+        ObservableCollection<Produit> lesProduitsArchives = new ObservableCollection<Produit>();
         public ApplicationData()
         {
             this.LesCouleurs = Couleur.Read();
@@ -66,6 +69,8 @@ namespace Maquette1
             this.LesTypesProduits = TypeProduit.Read();
             this.LesTypesProduits.ToString();
 
+            
+
         }
 
         public ObservableCollection<Couleur> LesCouleurs { get => lesCouleurs; set => lesCouleurs = value; }
@@ -80,6 +85,8 @@ namespace Maquette1
         public ObservableCollection<Produit> LesProduits { get => lesProduits; set => lesProduits = value; }
         public ObservableCollection<Salarie> LesSalaries { get => lesSalaries; set => lesSalaries = value; }
         public ObservableCollection<TypeProduit> LesTypesProduits { get => lesTypesProduits; set => lesTypesProduits = value; }
-        internal ObservableCollection<Magasin> LesMagasins { get => lesMagasins; set => lesMagasins = value; }
+        public ObservableCollection<Produit> LesProduitsCommande { get => lesProduitsCommande; set => lesProduitsCommande = value; }
+        public ObservableCollection<Magasin> LesMagasins { get => lesMagasins; set => lesMagasins = value; }
+        public ObservableCollection<Produit> LesProduitsArchives { get => lesProduitsArchives; set => lesProduitsArchives = value; }
     }
 }

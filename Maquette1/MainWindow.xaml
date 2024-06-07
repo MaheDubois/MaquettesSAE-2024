@@ -131,7 +131,7 @@
                         </StackPanel>
 
                         <DataGrid
-                            x:Name="dgProduits"
+                            Name="dgProduit"
                             Width="500"
                             MinHeight="30"
                             MaxHeight="100"
@@ -159,11 +159,11 @@
                         </DataGrid>
 
                         <Button
-                            x:Name="bt_Valider"
+                            x:Name="bt_Ajouter"
                             Margin="150,20,150,0"
                             Background="#FF5AC35A"
                             BorderThickness="3,3,3,3"
-                            Content="Valider" />
+                            Content="Ajouter" Click="bt_Ajouter_Click" />
 
                     </StackPanel>
                 </Grid>
@@ -240,7 +240,8 @@
                             <Label
                                 x:Name="lb_DateCreation"
                                 Margin="80,3,0,0"
-                                Content="Date création commande : XX/XX/XXXX" />
+                                Content="Création commande :" />
+                            <DatePicker x:Name="dt_DateCréation" Background="White" Width="150" Height="25"/>
                         </StackPanel>
                         <Label
                             x:Name="lb_DétailCommande"
@@ -249,11 +250,12 @@
                             FontWeight="Bold" />
                         <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
                             <Label x:Name="lb_Transport" Content="Transport : " />
-                            <ListBox
+                            <ComboBox
                                 x:Name="lib_Transport"
                                 Width="125"
                                 Margin="5,0,0,0"
-                                Background="White" />
+                                Background="White" 
+                                ItemsSource="{Binding LesModesTransports}"/>
                             <Label
                                 x:Name="lb_Fournisseur"
                                 Margin="60,0,0,0"
@@ -275,22 +277,33 @@
                             x:Name="lb_ListeProduits"
                             Margin="0,15,0,0"
                             Content="Liste produits :" />
-                        <ListBox
-                            x:Name="lib_ListeProduits"
-                            Width="450"
-                            Height="80"
-                            Margin="14,5,15,0"
-                            BorderThickness="3,3,3,3">
-                            <ListBoxItem Content="Produit 1                            Quantité : XX (1-100)                              XX,xx eur" />
-                            <ListBoxItem Content="Produit 2                            Quantité : XX (1-100)                              XX,xx eur" />
-                            <ListBoxItem Content="Produit 3                            Quantité : XX (1-100)                              XX,xx eur" />
-                            <ListBoxItem Content="Produit 4                            Quantité : XX (1-100)                              XX,xx eur" />
-                            <ListBoxItem Content="Produit 5                            Quantité : XX (1-100)                              XX,xx eur" />
-                            <ListBoxItem Content="Produit 6                            Quantité : XX (1-100)                              XX,xx eur" />
-                            <ListBoxItem Content="Produit 7                            Quantité : XX (1-100)                              XX,xx eur" />
-                            <ListBoxItem Content="Produit 8                            Quantité : XX (1-100)                              XX,xx eur" />
-                            <ListBoxItem Content="Produit N                            Quantité : XX (1-100)                              XX,xx eur" />
-                        </ListBox>
+                        <DataGrid
+                            Name="dgProduitCommande"
+                            Width="471"
+                            MinHeight="30"
+                            MaxHeight="81"
+                            Margin="10,10,10,0"
+                            HorizontalAlignment="Center"
+                            AutoGenerateColumns="False"
+                            IsReadOnly="True"
+                            ItemsSource="{Binding LesProduitsCommande}">
+                            <DataGrid.Columns>
+
+                                <DataGridTextColumn
+                                    Width="1*"
+                                    Binding="{Binding Nom_produit}"
+                                    Header="Produit" />
+                                <DataGridTextColumn
+                                    Width="1*"
+                                    Binding="{Binding Taille_produit}"
+                                    Header="Taille" />
+                                <DataGridTextColumn
+                                    Width="1*"
+                                    Binding="{Binding Prix_vente}"
+                                    Header="Prix" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+
 
                     </StackPanel>
                 </Grid>
@@ -313,23 +326,16 @@
                             Width="140"
                             Height="150"
                             Margin="14,5,15,0"
-                            BorderThickness="3,3,3,3">
-                            <ListBoxItem Content="Commande 1" />
-                            <ListBoxItem Content="Commande 2" />
-                            <ListBoxItem Content="Commande 3" />
-                            <ListBoxItem Content="Commande 4" />
-                            <ListBoxItem Content="Commande 5" />
-                            <ListBoxItem Content="Commande 6" />
-                            <ListBoxItem Content="Commande 7" />
-                            <ListBoxItem Content="Commande 8" />
-                            <ListBoxItem Content="Commande N" />
+                            BorderThickness="3,3,3,3"
+                            ItemsSource="{Binding LesCommandesArchivées}">
+                            
                         </ListBox>
                         <Button
                             x:Name="bt_ValiderVisu"
                             Margin="15,40,15,0"
                             Background="#FF5AC35A"
                             BorderThickness="3,3,3,3"
-                            Content="Valider" />
+                            Content="Valider"  />
 
                     </StackPanel>
                 </Grid>
