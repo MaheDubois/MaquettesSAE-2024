@@ -24,7 +24,7 @@ namespace Maquette1
         public MainWindow()
         { 
             InitializeComponent();
-            dgProduits.Items.Filter = Rechercher;
+            //dgProduits.Items.Filter = Rechercher;
             Couleur.Read();
         }
 
