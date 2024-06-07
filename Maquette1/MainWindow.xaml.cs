@@ -24,8 +24,7 @@ namespace Maquette1
         public MainWindow()
         { 
             InitializeComponent();
-            dgProduits.Items.Filter = Rechercher;
-            Couleur.Read();
+            
         }
 
         private bool Rechercher(object obj)
@@ -44,15 +43,12 @@ namespace Maquette1
 
         }
 
-        private void bt_Ajouter_Click()
-        {
-
-        }
+       
 
         private void tb_Rechercher_TextChanged(object sender, TextChangedEventArgs e)
         {
             
-           // CollectionViewSource.GetDefaultView(dgProduits.ItemsSource).Refresh();
+                CollectionViewSource.GetDefaultView(dgProduit.ItemsSource).Refresh();
         }
     }
 }

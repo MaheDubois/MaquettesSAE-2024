@@ -131,7 +131,7 @@
                         </StackPanel>
 
                         <DataGrid
-                            x:Name="dgProduits"
+                            x:Name="dgProduit"
                             Width="500"
                             MinHeight="30"
                             MaxHeight="100"

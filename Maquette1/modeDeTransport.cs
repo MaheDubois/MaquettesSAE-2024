@@ -31,7 +31,7 @@ namespace Maquette1
 
         public override string? ToString()
         {
-            return base.ToString();
+            return mode_transport.ToString();
         }
 
         public static ObservableCollection<ModeDeTransport> Read()
