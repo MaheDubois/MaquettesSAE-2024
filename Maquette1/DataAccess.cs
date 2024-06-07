@@ -11,13 +11,13 @@ namespace Maquette1
 {
     public class DataAccess
     {
-        public static DataAccess instance;
-        public string mdp = "";
-        public string user = "";
-        
+        private static DataAccess instance;
+      
+
+
         public DataAccess()
         {
-            ConnexionBD();
+            
         }
 
         public static DataAccess Instance
@@ -37,10 +37,8 @@ namespace Maquette1
             get;
             set;
         }
-        public void ConnexionBD()
+        public void ConnexionBD(string strConnexion)
         {
-           string strConnexion = "Host= srv-peda-new;Port=5433;Database=BotanicTP11;Username="+user+";Password="+mdp+";Persist Security Info=True";
-            
             try
             {
                 Connexion = new NpgsqlConnection();

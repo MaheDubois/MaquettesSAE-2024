@@ -42,7 +42,7 @@ namespace Maquette1
             this.LesDetailsCaracteristiques = DetailCaracteristique.Read();
             this.LesDetailsCaracteristiques.ToString();
 
-            this.LesDetailsCommandes=DetailCommande.Read();
+            this.LesDetailsCommandes = DetailCommande.Read();
             this.LesDetailsCommandes.ToString();
 
             this.LesFournisseurs = Fournisseur.Read();

@@ -97,12 +97,6 @@
                                 Content="Categories" />
                         </StackPanel>
                         <StackPanel Margin="22,8,0,0" Orientation="Horizontal">
-                            <ComboBox x:Name="cb_FiltreType" Width="90">
-                                <ComboBoxItem>Jardin</ComboBoxItem>
-                                <ComboBoxItem>Mobilier</ComboBoxItem>
-                                <ComboBoxItem>Potager</ComboBoxItem>
-                                <ComboBoxItem>...</ComboBoxItem>
-                            </ComboBox>
                             <ComboBox
                                 x:Name="cb_FiltreType"
                                 Width="90"
